@@ -17,6 +17,48 @@ export default defineType({
       title: 'Description',
     },
     {
+      name: 'creditList',
+      type: 'array',
+      title: 'Credit List',
+      description: 'A formatted list of credits for the video with rich text options',
+      of: [
+        {
+          type: 'block',
+          styles: [
+            {title: 'Normal', value: 'normal'},
+            {title: 'Heading 2', value: 'h2'},
+            {title: 'Heading 3', value: 'h3'},
+            {title: 'Quote', value: 'blockquote'}
+          ],
+          marks: {
+            decorators: [
+              {title: 'Strong', value: 'strong'},
+              {title: 'Emphasis', value: 'em'},
+              {title: 'Underline', value: 'underline'},
+            ],
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'Link',
+                fields: [
+                  {
+                    name: 'href',
+                    type: 'url',
+                    title: 'URL',
+                  },
+                ],
+              },
+            ],
+          },
+        },
+        {
+          type: 'image',
+          options: {hotspot: true},
+        },
+      ],
+    },
+    {
       name: 'link',
       type: 'string',
       title: 'Link',
