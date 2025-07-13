@@ -1,4 +1,4 @@
-import { defineType } from 'sanity'; // Importing types from Sanity
+import {defineType} from 'sanity' // Importing types from Sanity
 
 export default defineType({
   name: 'team',
@@ -24,6 +24,12 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'bio',
+      type: 'text',
+      title: 'Biography',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'subtitle',
       type: 'text',
       title: 'Subtitle',
@@ -44,12 +50,12 @@ export default defineType({
       name: 'videos',
       type: 'array',
       title: 'Videos Produced',
-      of: [{ type: 'reference', to: [{ type: 'video' }] }],
+      of: [{type: 'reference', to: [{type: 'video'}]}],
       description: 'This field shows videos associated with this producer.',
       options: {
         filter: '_type == "video" && producer._ref == $id',
-        filterParams: { id: '_id' },
+        filterParams: {id: '_id'},
       },
     },
   ],
-});
+})
