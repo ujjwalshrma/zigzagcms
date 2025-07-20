@@ -47,17 +47,17 @@ export default defineType({
       type: 'text',
       title: 'Spotify Account/Playlist Link',
     },
-    {
-      name: 'videos',
-      type: 'array',
-      title: 'Videos Directed',
-      of: [{type: 'reference', to: [{type: 'video'}]}],
-      readOnly: true,
-      description: 'This field shows videos associated with this director.',
-      options: {
-        filter: '_type == "video" && director._ref == $id',
-        filterParams: {id: '_id'},
-      },
-    },
+    // {
+    //   name: 'videos',
+    //   type: 'array',
+    //   title: 'Videos Directed',
+    //   of: [{type: 'reference', to: [{type: 'video'}]}],
+    //   // readOnly: true,
+    //   description: 'This field shows videos associated with this director.',
+    //   options: {
+    //     filter: '_type == "video" && director._ref == $id',
+    //     filterParams: {id: '_id'},
+    //   },
+    // },
   ],
 })
