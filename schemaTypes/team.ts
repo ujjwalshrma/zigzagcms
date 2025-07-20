@@ -18,12 +18,6 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'Role',
-      type: 'text',
-      title: 'Role',
-      validation: (Rule) => Rule.required(),
-    },
-    {
       name: 'bio',
       type: 'text',
       title: 'Biography',
